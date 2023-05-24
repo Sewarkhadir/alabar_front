@@ -5,7 +5,8 @@ table {
 
 th {
   font-weight: bold;
-  background-color: rgb(0, 0, 0, 0.02);
+  background-color: rgb(0, 0, 0, 0.02) !important;
+  border-bottom: 1.2px solid darkgray;
 }
 
 tr:nth-child(odd) {
