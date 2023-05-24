@@ -4,6 +4,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { AuthService } from '../shared/auth/auth.service';
 import { ResponseCredentials } from './model/response-credentials';
 import { environmentPath } from '../constants/services';
+import { User } from '../shared/user';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +27,10 @@ export class LoginService {
     return this.http.post<ResponseCredentials>(environmentPath.loginPath, {
       email, password
     });
+  }
+
+  getInfo(): Observable<User> {
+    return this.http.get<User>(environmentPath.userInfoPath);
   }
 
   public isTokenValid(): boolean {

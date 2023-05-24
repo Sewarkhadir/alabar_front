@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  restServiceRoot: 'https://nodejs-postgressql-bvyc.onrender.com'
+  restServiceRoot: 'https://nodejs-postgresql-bvyc.onrender.com'
 }
