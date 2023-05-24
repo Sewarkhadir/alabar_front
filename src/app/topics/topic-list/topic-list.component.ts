@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { TopicService } from '../topic.service';
 
 @Component({
   selector: 'app-topic-list',
   templateUrl: './topic-list.component.html',
   styleUrls: ['./topic-list.component.scss']
 })
-export class TopicListComponent {
+export class TopicListComponent implements OnInit {
   user = 'pedro sanchez'
   dataSource = [
     {title: 'rate demo sprint', owner: 'marga nacher', date: '20/04/2023',
@@ -17,5 +18,10 @@ export class TopicListComponent {
   ];
 
   displayedColumns: string[] = ['title', 'status', 'owner', 'date','closed'];
+  constructor(private topicService: TopicService) {}
+  ngOnInit() {
+    let data = this.topicService.getTopicList().subscribe();
+    console.log('data',data);
+  }
 
 }
