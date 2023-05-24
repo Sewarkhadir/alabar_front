@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="first">
+    <img
+      class="logo"
+      src="../../../assets/logo_completo.png"
+      alt="Logotipo completo"
+    />
+  </div>
+  <div class="second">
+    <h1>Alabar</h1>
+    <div style="width: 420px">
+      <form
+        #loginForm="ngForm"
+        (ngSubmit)="login(loginForm.form)"
+        [formGroup]="form"
+      >
+        <input
+          id="email"
+          placeholder="Email"
+          formControlName="email"
+          required
+        />
+        <input
+          id="password"
+          placeholder="Password"
+          type="password"
+          formControlName="password"
+          required
+        />
+        <button>Login</button>
+      </form>
+      <p
+        style="
+          font-weight: 200;
+          font-size: 13px;
+          color: gray;
+        "
+      >
+        If you need us to support you to resolve doubts or technical
+        problems, send us an email to
+        <a href="mailto:ccsw.support@support.com">ccsw.support@support.com</a>
+      </p>
+    </div>
+  </div>
+</div>
