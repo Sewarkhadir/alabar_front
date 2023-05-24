@@ -1,0 +1,27 @@
+.top_container{
+  height: 70px;
+  background: rgb(41, 171, 226);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: bold;
+  position: relative;
+  bottom: 8px;
+}
+
+.userName {
+  font-size: 20px;
+  position: relative;
+  bottom: 12px;
+}
+
+mat-icon{
+  width: 40px;
+  height: 40px;
+  font-size: 40px;
+}

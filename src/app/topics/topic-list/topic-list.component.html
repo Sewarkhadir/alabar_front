@@ -1,0 +1,45 @@
+<div class="m-5">
+  <p class="top_title my-5">Available topics for you</p>
+
+  <table mat-table [dataSource]="dataSource" matSort>
+    <!-- Title Column -->
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Title</th>
+      <td mat-cell *matCellDef="let elem"> {{elem.title}} </td>
+    </ng-container>
+
+    <!-- Status Column -->
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
+      <td mat-cell *matCellDef="let elem">
+        <span>{{elem.closed?'close - view result':'open - please vote'}}</span>
+      </td>
+    </ng-container>
+
+    <!-- Owner Column -->
+    <ng-container matColumnDef="owner">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Owner </th>
+      <td mat-cell *matCellDef="let elem"> {{elem.owner}} </td>
+    </ng-container>
+
+    <!-- Date Column -->
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
+      <td mat-cell *matCellDef="let elem"> {{elem.date}} </td>
+    </ng-container>
+
+    <!-- icons Column -->
+    <ng-container matColumnDef="closed">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let elem" style="color: gray;">
+        <mat-icon class="mr-2">{{elem.owner==user? 'lock_open_right' :'visibility'}}</mat-icon>
+        <mat-icon *ngIf="elem.owner==user">delete</mat-icon>
+        <mat-icon *ngIf="elem.owner!=user && !elem.closed">check_box</mat-icon>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+</div>
