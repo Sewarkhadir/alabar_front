@@ -1,0 +1,33 @@
+<app-top-bar></app-top-bar>
+<div class="container">
+  <form [formGroup]="topicForm" autocomplete="off">
+    <p>Type the topic title</p>
+    <mat-form-field class="title">
+      <input matInput type="text" placeholder="Type your topic" formControlName="title" class="">
+    </mat-form-field>
+
+    <p>Select the type of your topic</p>
+    <mat-form-field class="type">
+      <mat-select formControlName="type" placeholder="select the type">
+        <mat-option *ngFor="let t of types" [value]="t">{{t.title}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+
+  <div *ngIf="topicForm.get('type').value.id==1">
+    <p>Insert the list of the answers</p>
+    <mat-form-field class="title">
+      <input matInput type="text" placeholder="Type your anwser" [(ngModel)]="currentAns">
+    </mat-form-field>
+    <div class="btnAddAns">
+      <button mat-raised-button (click)="addAnswer()">add answer</button>
+    </div>
+
+    <div *ngIf="answersText.length">
+      <p>Answers</p>
+      <mat-list role="list" class="answerBlock">
+        <mat-list-item role="listitem" *ngFor="let ans of answersText">{{ans}}</mat-list-item>
+      </mat-list>
+    </div>
+  </div>
+</div>

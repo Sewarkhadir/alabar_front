@@ -1,0 +1,31 @@
+
+.container {
+  padding: 30px 10%;
+}
+
+.title {
+  width: 100%;
+}
+
+.type {
+  width: 100%;
+}
+
+p {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.btnAddAns {
+  display: flex;
+  justify-content: end;
+  button {
+    background: rgb(41, 171, 226);
+    color: white;
+  }
+}
+
+.answerBlock {
+  border: 1px solid gray;
+  border-radius: 10px;
+}

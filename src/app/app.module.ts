@@ -8,18 +8,24 @@ import { LoginModule } from './login/login.module';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { MaterialModule } from './material/material.module';
 import { TopicListComponent } from './topics/topic-list/topic-list.component';
+import { CreatTopicComponent } from './topics/creat-topic/creat-topic.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
     TopBarComponent,
-    TopicListComponent
+    TopicListComponent,
+    CreatTopicComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
     BrowserAnimationsModule,
-    LoginModule
+    LoginModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

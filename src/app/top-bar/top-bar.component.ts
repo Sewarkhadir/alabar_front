@@ -7,7 +7,9 @@ import { AuthService } from '../shared/auth/auth.service';
   styleUrls: ['./top-bar.component.scss']
 })
 export class TopBarComponent implements OnInit {
+
   constructor(private authService: AuthService) {}
+
   ngOnInit() {}
 
   logout() {
