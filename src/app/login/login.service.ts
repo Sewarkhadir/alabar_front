@@ -15,8 +15,8 @@ export class LoginService {
 
   constructor(private http: HttpClient, private authService: AuthService) { }
 
-  logout() {
-    this.authService.logout();
+  logout(): Observable<Object> {
+    return this.http.post(environmentPath.logoutPath, '')
   }
 
   openLogoutDialog() {
@@ -26,11 +26,11 @@ export class LoginService {
   login(email: string, password: string): Observable<ResponseCredentials> {
     return this.http.post<ResponseCredentials>(environmentPath.loginPath, {
       email, password
-    });
+    }, { withCredentials: true });
   }
 
   getInfo(): Observable<User> {
-    return this.http.get<User>(environmentPath.userInfoPath);
+    return this.http.get<User>(environmentPath.userInfoPath, { withCredentials: true });
   }
 
   public isTokenValid(): boolean {
